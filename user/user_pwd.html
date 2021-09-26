@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>重置密码diY</title>
+    <!--    <script src="assets/lib/jquery.js"></script>-->
+    <!--    <script src="assets/lib/layui/layui.all.js"></script>-->
+    <!--    <script src="assets/lib/layui/layui.js"></script>-->
+    <link href="../assets/lib/layui/css/layui.css" rel="stylesheet">
+    <link href="../assets/css/user/user_pwd.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="layui-card">
+    <div class="layui-card-header">修改密码</div>
+    <div class="layui-card-body">
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">原密码</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|pwds" name="oldPwd"
+                           placeholder="请输入原密码" required type="password">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">新密码</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|pwd|samePwd" name="newPwd"
+                           placeholder="请输入新密码" required type="password">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">确认新密码</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|pwd|rePwd" name="rePwd"
+                           placeholder="请确认新密码" required type="password">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-filter="formDemo" lay-submit>修改密码</button>
+                    <button class="layui-btn layui-btn-primary" id="btnReset" type="reset">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/js/user/user_pwd.js"></script>
+
+
+</body>
+
+</html>

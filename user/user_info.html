@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心页面diy</title>
+    <link href="../assets/lib/layui/css/layui.css" rel="stylesheet">
+    <link href="../assets/css/user/user_info.css" rel="stylesheet">
+</head>
+<body>
+<div class="layui-card">
+    <div class="layui-card-header">修改用户信息</div>
+    <div class="layui-card-body">
+        <!--        MP：给指定表单集合获取所有值和写入-->
+        <form action="" class="layui-form" lay-filter="formUserInfo">
+            <!--            MP:表单提交的隐藏域-->
+            <input name="id" type="hidden" value="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">登录名称</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|nickname" name="username"
+                           placeholder="请输入登录名称"
+                           readOnly required type="text">
+                    <!--                    MP:设置成只读-->
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名称</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|nickname" name="nickname"
+                           placeholder="请输入用户名称"
+                           required type="text">
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户邮箱</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required|email" name="email"
+                           placeholder="请输入用户邮箱"
+                           required type="text">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-filter="formDemo" lay-submit>提交修改</button>
+                    <button class="layui-btn layui-btn-primary" id="btnReset" type="reset">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/js/index.js"></script>
+<script src="../assets/js/user/user_info.js"></script>
+
+</body>
+</html>

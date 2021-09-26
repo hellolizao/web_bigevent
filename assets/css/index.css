@@ -1,0 +1,59 @@
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+.layui-icon {
+    margin-right: 10px;
+    margin-left: 12px;
+}
+
+.iconfont {
+    margin-right: 9px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/*隐藏出现的页面滚动条*/
+.layui-body {
+    overflow: hidden
+}
+
+/*清除刷新时的动画*/
+a {
+    transition: none !important;
+}
+
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    /*MP：文本不能被选中*/
+    user-select: none;
+}
+
+.layui-side-scroll .userinfo {
+    border-bottom: 1px solid red;
+}
+.layui-nav-img{
+    width: 40px;
+    height: 40px;
+}
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background-color: #0bace6;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    margin-right: 4px;
+
+}
