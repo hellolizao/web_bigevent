@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章发布diy</title>
+    <link href="../assets/lib/bootstrap.css" rel="stylesheet">
+    <link href="../assets/lib/layui/css/layui.css" rel="stylesheet">
+    <link href="../assets/css/article/art_pub.css" rel="stylesheet">
+    <link href="../assets/lib/cropper/cropper.css" rel="stylesheet"/>
+</head>
+<body>
+<!--1:卡片区域-->
+<div class="layui-card">
+    <div class="layui-card-header">写文章</div>
+    <div class="layui-card-body">
+        <!--        2:发表文章的表单-->
+        <form class="layui-form" id="form-pub"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章标题</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="title" placeholder="请输入标题"
+                           required type="text">
+                </div>
+            </div>
+            <!--3：下拉选择框-->
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章类别</label>
+                <div class="layui-input-block">
+                    <select lay-verify="required" name="cate_id">
+                    </select>
+                </div>
+            </div>
+            <!--4：文章内容（富文本区域-->
+            <div class="layui-form-item">
+                <!-- 左侧的 label -->
+                <label class="layui-form-label">文章内容</label>
+                <!-- 为富文本编辑器外部的容器设置高度 -->
+                <div class="layui-input-block" style="height: 400px;">
+                    <!-- 重要：将来这个 textarea 会被初始化为富文本编辑器 -->
+                    <textarea name="content"></textarea>
+                </div>
+            </div>
+
+            <!--5：封面的裁剪-->
+            <div class="layui-form-item">
+                <!-- 左侧的 label -->
+                <label class="layui-form-label">文章封面</label>
+                <!-- 选择封面区域 -->
+                <div class="layui-input-block cover-box">
+                    <!-- 左侧裁剪区域 -->
+                    <div class="cover-left">
+                        <img alt="" id="image" src="../assets/images/sample2.jpg"/>
+                    </div>
+                    <!-- 右侧预览区域和选择封面区域 -->
+                    <div class="cover-right">
+                        <!-- 预览的区域 -->
+                        <div class="img-preview"></div>
+                        <!-- 选择封面按钮 -->
+                        <button class="layui-btn layui-btn-danger" id="btnChooseImage" type="button">选择封面</button>
+
+                        <!--MP:上传图片要使用隐藏的文件选择框-->
+                        <input accept="image/png,image/jpeg,image/gif" id="coverFile" style="display:none;"
+                               type="file"/>
+
+                    </div>
+                </div>
+            </div>
+            <!--6:提交按钮(两个按钮都时提交)-->
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn " id="" lay-submit>发布</button>
+                    <button class="layui-btn layui-btn-primary" id="btnSave2" type="reset">存为草稿</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--3-1：下拉的选择框的模板-->
+<script id="tpl-cate" type="text/html">
+    <option value="">请选择文章类别</option>
+    {{each data}}
+    <option value="{{$value.Id}}">{{$value.name}}</option>
+    {{/each}}
+</script>
+
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/lib/template-web.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/lib/cropper/Cropper.js"></script>
+<script src="../assets/lib/cropper/jquery-cropper.js"></script>
+<!-- 富文本 -->
+<script src="../assets/lib/tinymce/tinymce.min.js"></script>
+<script src="../assets/lib/tinymce/tinymce_setup.js"></script>
+<script src="../assets/js/article/art_pub.js"></script>
+</body>
+</html>
